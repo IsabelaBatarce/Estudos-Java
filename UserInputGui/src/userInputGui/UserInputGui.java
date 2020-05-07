@@ -25,7 +25,7 @@ public class UserInputGui {
 		 * Classe operations + objeto operations = instanciar classe;
 		 */
 		Operations operations = new Operations(number1, number2);
-		Soma soma = new Soma(number1,number2);
+		Soma soma = new Soma(number1,number2,20);
 		
 		// imprimindo o método operations.performOperation
 
