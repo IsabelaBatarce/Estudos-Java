@@ -13,31 +13,49 @@ public class Line {
 
 	// Construtor
 	public Line(Point begin, Point end) {
-		this.begin = begin;
-		this.end = end;
+		// Errado, viola encapsulamento:
+		/*
+		 * this.begin = begin; this.end = end;
+		 */
+		// Correto:
+		this.begin = new Point(begin.getX(), begin.getY());
+		this.begin = new Point(end.getX(), end.getY());
+
 	}
 
 	// O getter é um tipo point, porque o atributo begin é um ponto.
-	public Point getBegin() {
-		return begin;
+	public int getBeginX() {
+		return begin.getX();
 	}
 
-	public Point getEnd() {
-		return end;
+	public int getBeginY() {
+		return begin.getY();
 	}
-	
+
+	public int getEndY() {
+		return end.getY();
+	}
+
+	public int getEndX() {
+		return end.getX();
+	}
+
 	public void setBegin(Point begin) {
-		this.begin=begin;
-		
+		this.begin = new Point(begin.getX(), begin.getY());
+
 	}
-	
+
 	public void setEnd(Point end) {
-		this.end=end;
+		this.begin = new Point(end.getX(), end.getY());
+
 	}
-	
-	/*É um método pronto da biblioteca, caso voce utilize o system.out.prinln e deseje ver o que está nessa classse, ela precisa possuir esse método*/
+
+	/*
+	 * É um método pronto da biblioteca, caso voce utilize o system.out.prinln e
+	 * deseje ver o que está nessa classse, ela precisa possuir esse método
+	 */
 	public String toString() {
-		return"Linebegin="+begin+"end="+end;
+		return "Linebegin=" + begin + "end=" + end;
 	}
-	
+
 }
